@@ -6,7 +6,7 @@ import os
 data_dir = 'D:/RA/dataForCNN-20240516T234355Z-001/dataforCNN'
 
 # Model hyperparameters
-batch_size = 10
+batch_size = 3
 num_epochs = 20
 learning_rate = 0.001
 
