@@ -42,3 +42,7 @@ for epoch in range(config.num_epochs):
     val_losses.append(val_loss)
     
     print(f'Epoch {epoch+1}/{config.num_epochs}, Train Loss: {average_train_loss:.6f}, Validation Loss: {val_loss:.6f}')
+    # Save the model if the validation loss is lower than the previous validation loss
+    if val_loss < prev_val_loss:
+        torch.save(model.state_dict(), f'./../../models/model_mse_val_{val_loss:.8f}.pt')
+        prev_val_loss = val_loss
