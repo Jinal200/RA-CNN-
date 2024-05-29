@@ -4,9 +4,9 @@ from torch.utils.data import Dataset, DataLoader
 import random
 
 # Hyperparameters for data preparation
-BATCH_SIZE = 3
-VAL_SPLIT = 0.1
-TEST_SPLIT = 0.15
+batch_size = 3
+val_split = 0.1
+test_split = 0.15
 data_folder = 'D:/RA/dataForCNN-20240516T234355Z-001/dataforCNN'
 
 # Dataset class
