@@ -3,7 +3,7 @@ import numpy as np
 import torch
 
 # the directory where your test data is located
-testImageLocation = 'D:/RA/dataForCNN-20240516T234355Z-001/dataforCNN/'  # Change this path accordingly
+testImageLocation = 'D:/RA/dataForCNN-20240516T234355Z-001/dataforCNN'  # Change this path accordingly
 predictionFolder = 'D:/RA/predicted_data"  # Change this path accordingly
 
 # list of all test files ending with '_SAD.npy'
