@@ -2,6 +2,7 @@
 
 import config
 from gendataloaders import prepare_dataloaders
+from config import BASE_LR, MAX_LR, STEP_SIZE_UP, MODE
 from cnn_model import ResNet3D, calculate_loss
 import torch
 import torch.nn as nn
@@ -16,9 +17,13 @@ model = Advanced3DCNN()
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-# Define CyclicLR scheduler
-scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=0.001, max_lr=0.01, step_size_up=10, mode='triangular2')
-
+scheduler = optim.lr_scheduler.CyclicLR(
+    optimizer,
+    base_lr=BASE_LR,
+    max_lr=MAX_LR,
+    step_size_up=STEP_SIZE_UP,
+    mode=MODE
+    
 # Train the model
 train_losses = []
 val_losses = []
