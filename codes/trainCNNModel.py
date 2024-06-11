@@ -12,9 +12,12 @@ import matplotlib.pyplot as plt
 train_loader, test_loader = prepare_dataloaders(config.data_dir, config.batch_size)
 
 # Instantiate the model, define loss function and optimizer
-model = ResNet3D(config)
+model = Advanced3DCNN()
 criterion = nn.MSELoss()
-optimizer = optim.Adam(model.parameters(), lr=config.learning_rate)
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+# Define CyclicLR scheduler
+scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=0.001, max_lr=0.01, step_size_up=10, mode='triangular2')
 
 # Train the model
 train_losses = []
