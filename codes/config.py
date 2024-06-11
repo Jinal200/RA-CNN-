@@ -24,3 +24,8 @@ upblock_padding = 2
 conv2_out_channels = 1
 conv2_kernel_size = 5
 conv2_padding = 2
+
+BASE_LR = 0.001
+MAX_LR = 0.01
+STEP_SIZE_UP = 10
+MODE = 'triangular2'
